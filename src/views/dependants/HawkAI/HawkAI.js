@@ -24,6 +24,10 @@ import 'css/Googlemap.css';
 //     width: 100%;
 //     height: 100%;
 // `;
+const SideWrapper = styled.div`
+  width: 25%;
+  height: 100%;
+`;
 
 const Wrapper = styled.main((props) => ({
   width: props.width,
@@ -145,7 +149,7 @@ export class HawkAI extends Component {
         places, mapApiLoaded, mapInstance, mapApi,
       } = this.state;
 
-      let height = this.state.clicked ? "75%" : "100%";
+      let height = this.state.clicked ? "85%" : "85%";
       let width = this.state.clicked ? "75%" : "100%";
 
       return (
@@ -180,15 +184,12 @@ export class HawkAI extends Component {
               lat={this.state.lat}
               lng={this.state.lng}
             />
-
           </GoogleMapReact>
           <div className="info-wrapper">
             <div className="map-details">Latitude: <span>{this.state.lat}</span>, Longitude: <span>{this.state.lng}</span></div>
             <div className="map-details">Zoom: <span>{this.state.zoom}</span></div>
             <div className="map-details">Address: <span>{this.state.address}</span></div>
           </div>
-
-
         </Wrapper >
       );
     }
